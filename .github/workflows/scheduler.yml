@@ -13,4 +13,4 @@ jobs:
       - name: Call job-scheduler.ashx
         run: |
           echo "Calling job handler..."
-          curl -v --max-time 60 "https://tjone.win-pick.com/job-scheduler.ashx"
+          curl -v --max-time 60 "https://tjone.win-pick.com/job-scheduler.ashx?key=${{ secrets.MyKey1 }}"
