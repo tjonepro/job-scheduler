@@ -1,1 +1,16 @@
+name: ASP.NET Job Scheduler
 
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # every 10 minutes (UTC)
+  workflow_dispatch:
+
+jobs:
+  run-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call job-scheduler.ashx
+        run: |
+          echo "Calling job handler..."
+          curl -v --max-time 60 "https://tjone.win-pick.com/job-scheduler.ashx"
