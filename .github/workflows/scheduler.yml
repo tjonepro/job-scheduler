@@ -10,7 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Call job-scheduler.ashx
+      - name: Call job-scheduler securely
         run: |
-          echo "Calling job handler..."
-          curl -v --max-time 60 "https://tjone.win-pick.com/job-scheduler.ashx?key=${{ secrets.MyKey1 }}"
+          echo "Calling secure job handler..."
+
+          TS=$(date +%s)
+          NONCE=$(uuidgen)
+
+          curl -sS --fail --max-time 60 \
+            -H "X-Job-Secret: ${{ secrets.MyKey1 }}" \
+            -H "X-Job-Timestamp: $TS" \
+            -H "X-Job-Nonce: $NONCE" \
+            "https://tjone.win-pick.com/job-scheduler.ashx"
