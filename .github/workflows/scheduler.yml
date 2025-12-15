@@ -2,7 +2,7 @@ name: ASP.NET Job Scheduler
 
 on:
   schedule:
-    - cron: "*/10 * * * *"   # every 10 minutes (UTC)
+    - cron: "* * * * *"   # every 1 minutes (UTC)
   workflow_dispatch:
 
 jobs:
