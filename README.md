@@ -1,2 +1,2 @@
 # job-scheduler
-Free scheduled cron jobs for my application
+Free scheduled cron jobs for my applications
