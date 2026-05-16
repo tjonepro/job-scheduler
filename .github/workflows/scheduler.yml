@@ -21,4 +21,4 @@ jobs:
             -H "X-Job-Secret: ${{ secrets.MyKey1 }}" \
             -H "X-Job-Timestamp: $TS" \
             -H "X-Job-Nonce: $NONCE" \
-            "https://tjone.win-pick.com/job-scheduler.ashx"
+            "https://mytjoneapp.tjonepro.com/job-scheduler.ashx"
