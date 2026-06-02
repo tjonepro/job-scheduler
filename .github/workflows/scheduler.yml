@@ -1,4 +1,4 @@
-name: ASP.NET Job Scheduler
+name: Main Job Scheduler
 
 on:
   schedule:
